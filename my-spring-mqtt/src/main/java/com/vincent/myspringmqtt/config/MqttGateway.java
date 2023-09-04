@@ -1,0 +1,24 @@
+package com.vincent.myspringmqtt.config;
+
+import org.springframework.integration.annotation.MessagingGateway;
+import org.springframework.integration.mqtt.support.MqttHeaders;
+import org.springframework.messaging.handler.annotation.Header;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author vincent.liu
+ * @apiNote
+ * @jira
+ * @date 2022/5/31+14:43
+ */
+@Component
+@MessagingGateway(defaultRequestChannel = MqttConfig.OUTBOUND_CHANNEL)
+public interface MqttGateway {
+    void sendToMqtt(String payload);
+    
+    void sendToMqtt(@Header(MqttHeaders.TOPIC) String topic, String payload);
+    
+    void sendToMqtt(@Header(MqttHeaders.TOPIC) String topic, @Header(MqttHeaders.QOS) int qos, String payload);
+    
+    void sendToMqtt(@Header(MqttHeaders.TOPIC) String topic, @Header(MqttHeaders.QOS) int qos, @Header(MqttHeaders.RETAINED)boolean retained, String payload);
+}

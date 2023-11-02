@@ -7,4 +7,8 @@ public class Demo {
     private static String hello(String name){
         return "Hello " + name;
     }
+    // 不断的删除和报错
+    public static void main(String[] args) {
+        
+    }
 }

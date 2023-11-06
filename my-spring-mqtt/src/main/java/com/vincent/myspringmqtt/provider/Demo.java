@@ -8,7 +8,10 @@ public class Demo {
         return "Hello " + name;
     }
     // 不断的删除和报错
-    public static void main(String[] args) {
-        
+    private void demo2(){
+        System.out.println("Hello World!");
+    }
+    private static String hello(String name){
+        return "Hello " + name;
     }
 }

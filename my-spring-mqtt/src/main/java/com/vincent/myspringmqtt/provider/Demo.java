@@ -11,7 +11,4 @@ public class Demo {
     private void demo2(){
         System.out.println("Hello World!");
     }
-    private static String hello(String name){
-        return "Hello " + name;
-    }
 }
